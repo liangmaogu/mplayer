@@ -1,0 +1,33 @@
+extends user
+
+block userCenter
+	form(class="form-horizontal", method="post")
+		fieldset
+			legend 修改信息
+			div.control-group
+				label(class="control-label", for="username") 昵称
+				div.controls
+					input(type="text", class="input-xlarge", id="username", name="username", value="#{user.name}", disabled="disabled")
+			div.control-group
+				label(class="control-label", for="realname") 姓名
+				div.controls
+					input(type="text", class="input-xlarge", id="realname", name="realname", placeholder="#{user.realname}")
+			div.control-group
+				label(class="control-label", for="company") 公司
+				div.controls
+					input(type="text", class="input-xlarge", id="company", name="company", placeholder="#{user.company}")
+			div.control-group
+				label(class="control-label", for="post") 职位
+				div.controls
+					input(type="text", class="input-xlarge", id="post", name="post", placeholder="#{user.post}")
+			div.control-group
+				label(class="control-label", for="phone") 联系电话
+				div.controls
+					input(type="text", class="input-xlarge", id="phone", name="phone", placeholder="#{user.phone}")
+			div.control-group
+				label(class="control-label", for="description") 个人简介
+				div.controls
+					textarea(class="input-xlarge", id="description", name="description") #{user.description}
+					
+			div.form-actions
+				button(type="submit", class="btn btn-primary") 修改	

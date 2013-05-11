@@ -1,0 +1,13 @@
+canvas(id="sculpture", width="128", height="128", style="border:1px solid #c3c3c3;")
+
+script
+	window.onload = function() {
+		var canvas = document.getElementById("sculpture");
+		var context = canvas.getContext("2d");
+		
+		var image = new Image();
+		image.src = "#{user.sculpture}";
+		image.onload = function() {
+			context.drawImage(image, 0, 0, canvas.width, canvas.height);
+		};
+	};

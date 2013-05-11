@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	div(class="container-fluid")
+		div(class="row-fluid")
+			div(class="span2")
+				div(class="row offset3")
+					- if (user.sculpture)
+						include sculpture
+				div(class="row offset5")
+					a(href="/user/#{user.name}/update") 修改信息
+				div(class="row offset5")
+					a(href="/user/#{user.name}/sculpture") 修改头像
+			div(class="span10")
+				block userCenter

@@ -1,0 +1,27 @@
+extends user
+
+block headlink
+	link(rel='stylesheet', href='/stylesheets/fileupload-ui.css')
+
+block userCenter
+	form(class="form-horizontal", method="post", enctype="multipart/form-data")
+		fieldset
+			legend 修改头像
+			div.control-group
+				div.controls
+					a(class="btn-addPic", href="javascript: void(0);")
+						span
+							em +
+							添加图片
+						input(id="fileupload", class="file-prew", title="支持jpg、jpeg、gif、png格式，文件小于5M", tabindex="3", type="file", name="sculpture", size="3", onchange="selectChange();")
+					canvas(id="view-image", width="300", height="240", style="border:1px solid #c3c3c3;")
+					canvas(id="view-image-128", width="128", height="128", style="border:1px solid #c3c3c3;")
+					canvas(id="view-image-64", width="64", height="64", style="border:1px solid #c3c3c3;")
+					
+			div.form-actions
+				button(type="submit", class="btn btn-primary start") 
+					i.icon-upload.icon-white
+					span 确定	
+					
+	script(type="text/javascript", src="/javascripts/image-upload.js")
+		
